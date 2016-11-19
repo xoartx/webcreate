@@ -1,0 +1,69 @@
+<?php
+include("common.php");
+?>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>HP制作</title>
+    <meta name="author" content="">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <!-- <base href="http://localhost/tasogare/"> -->
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css?2016111200">
+    <link rel="icon" type="image/png" href="./images/favicon-32.png">
+</head>
+<body>
+    <div id="container">
+        <div id="logo"><img src="./images/logo_oart.png" alt="ロゴ"></div>
+        <header id="header">
+            <!-- <h1><ruby><rb>tasogare</rb><rp>(<rp><rt>たそがれ</rt><rp>)</rp></ruby> = <ruby><rb>oart</rb><rp>(</rp><rt>オアート</rt><rp>)</rp></ruby> + <ruby><rb>ages</rb><rp>(</rp><rt>エイジス</tr><rp>)</rp></ruby></h1> -->
+            <h1>ホームページ、作ります</h1>
+            <img id="price" alt="価格" src="./images/price01.png">
+        </header>
+        <aside id="sidebar">
+            <!-- <img src="./images/white_dot.png"> -->
+            <h2>HP制作の流れ</h2>
+        </aside>
+        <main>
+            <h2>カンタン見積もり</h2>
+            <p>
+                まずはこのサイト上で「カンタン見積もり」をしていただくことをお薦めします。作りたいHPのイメージと費用をつかんでいただき、ご納得いただけたら「お見積もりフォーム」に進んで頂きます。
+            </p>
+            <h2>お見積もりフォーム</h2>
+            <p>
+                ここでは「カンタン見積もり」では伝えられなかった詳しい条件をご入力頂きます。この後は記入いただいたe-mailでやり取りすることになるのでアドレスなど個人情報もご記入頂きます。もちろん個人情報管理は徹底して行います。
+            </p>
+            <h2>仕様決め</h2>
+            <p>
+                ページのボリューム感、動的コンテンツの有無、こだわりの度合いなど、後で「こんなつもりじゃなかったのに」という事がないようにしっかりコミュニケーションを取った上で最終的な仕様とお見積もりを出させていただきます。ここでご納得いただけた方のみ実際の制作に入らせていただきます。
+            </p>
+            <h2>制作</h2>
+            <p>
+                制作中もコミュニケーションを大切にします。ある程度見た目が出来た時、めどが立った時など、節目節目で「伝えたつもり」と「聞いたつもり」がずれることの無いことを確認し合いましょう。但し、お忙しくて「任せる」と言う方にはそのように対応させていただく事も可能です。
+            </p>
+            <h2>お客様最終チェック</h2>
+            <p>
+                制作が終わりましたらお客様に最終チェックをしていただきます。
+            </p>
+            <h2>納品</h2>
+            <p>
+                最終チェックOKであればお代と交換で納品させていただきます。
+            </p>
+        </main>
+        <nav id="nav">
+            <ul>
+                <!-- <li><a href="./">トップ</a></li>
+                <li><a href="development.html">ホームページ制作</a></li>
+                <li><a href="easy.html">カンタン見積もり</a></li>
+                <li><a href="activity.html">普段の生活</a></li>
+                <li><a href="twitter.html">ツイッター</a></li> -->
+                <?php
+                link_list();
+                ?>
+            </ul>
+        </nav>
+    </div>
+</body>
+</html>

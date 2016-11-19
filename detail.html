@@ -1,0 +1,206 @@
+<?php
+include("common.php");
+?>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>HP制作</title>
+    <meta name="author" content="">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link rel="icon" type="image/png" href="./images/favicon-32.png">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css?2016111201">
+    <script src="./js/jquery-3.1.1.min.js"></script>
+    <script src="./js/estimate.js"></script>
+    <script src="./js/check_制作.js"></script>
+</head>
+<body>
+    <?php
+    // POSTされたかどうかで場合分け
+    if ($_POST) {
+        $course = $_POST["course"];
+        $pages = $_POST["pages"];
+        $dynstat = $_POST["dynstat"];
+        $photos = $_POST["photos"];
+        $server = $_POST["server"];
+    } else {
+        $course = "omakase";
+        $pages = "pages_1";
+        $dynstat = "static";
+        $photos = "customer";
+        $server = "customer";
+    }
+    ?>
+    <div id="container">
+        <div id="logo"><img src="./images/logo_oart.png" alt="ロゴ"></div>
+        <header id="header">
+            <h1>お見積もりフォーム</h1>
+        </header>
+        <aside id="sidebar">
+            <h2>フォーム</h2>
+        </aside>
+        <main>
+            <form method="post" action="swiftmailer.php">
+                <dl>
+                    <dt>コース</dt>
+                    <dd>
+                        <?php
+                        // コース
+                        if ($course == "omakase") {
+                            ?>
+                            <input name="course" type="radio" value="omakase" checked>おまかせコース
+                            <input name="course" type="radio" value="custom">こだわりコース
+                            <?php
+                        } else {
+                            ?>
+                            <input name="course" type="radio" value="omakase">おまかせコース
+                            <input name="course" type="radio" value="custom" checked>こだわりコース
+                            <?php
+                        }
+                        ?>
+                    </dd>
+                    <dt>ページ数（およそ）</dt>
+                    <dd>
+                        <?php
+                        if ($pages== "pages_1") {
+echo <<<EOT
+<input name="pages" type="radio" value="pages_1" checked>１〜５ページ
+<input name="pages" type="radio" value="pages_2">６〜１０ページ
+<input name="pages" type="radio" value="pages_3">１１ページ〜
+EOT;
+                        } else if ($pages == "pages_2") {
+echo <<<EOT
+<input name="pages" type="radio" value="pages_1">１〜５ページ
+<input name="pages" type="radio" value="pages_2" checked>６〜１０ページ
+<input name="pages" type="radio" value="pages_3">１１ページ〜
+EOT;
+                        } else if ($pages == "pages_3") {
+echo <<<EOT
+<input name="pages" type="radio" value="pages_1">１〜５ページ
+<input name="pages" type="radio" value="pages_2">６〜１０ページ
+<input name="pages" type="radio" value="pages_3" checked>１１ページ〜
+EOT;
+}
+                        ?>
+                        <!-- <input name="pages" type="radio" value="pages_1" checked>１〜５ページ
+                        <input name="pages" type="radio" value="pages_2">６〜１０ページ
+                        <input name="pages" type="radio" value="pages_3">１１ページ〜 -->
+                    </dd>
+                    <dt>動的コンテンツを含むか？</dt>
+                    <dd>
+                        <?php
+                        if ($dynstat == "static") {
+echo <<<EOT
+<input name="dynstat" type="radio" value="static" checked>含まない
+<input name="dynstat" type="radio" value="dynamic">含む
+<input name="dynstat" type="radio" value="other">分からない
+EOT;
+                        } else if ($dynstat== "dynamic") {
+echo <<<EOT
+<input name="dynstat" type="radio" value="static">含まない
+<input name="dynstat" type="radio" value="dynamic" checked>含む
+<input name="dynstat" type="radio" value="other">分からない
+EOT;
+                        } else if ($dynstat == "other") {
+echo <<<EOT
+<input name="dynstat" type="radio" value="static">含まない
+<input name="dynstat" type="radio" value="dynamic">含む
+<input name="dynstat" type="radio" value="other" checked>分からない
+EOT;
+                        }
+                        ?>
+                        <!-- <input name="dynstat" type="radio" value="static" checked>静的ページ
+                        <input name="dynstat" type="radio" value="dynamic">動的ページ
+                        <input name="dynstat" type="radio" value="other">分からない -->
+                    </dd>
+                    <dt>写真、イラスト等の有無</dt>
+                    <dd>
+                        <?php
+                        if ($photos == "customer") {
+echo <<<EOT
+<input name="photos" type="radio" value="customer" checked>ご自身でご用意
+<input name="photos" type="radio" value="me">こちらでご用意
+EOT;
+                        } else if ($photos == "me") {
+echo <<<EOT
+<input name="photos" type="radio" value="customer">ご自身でご用意
+<input name="photos" type="radio" value="me" checked>こちらでご用意
+EOT;
+                        }
+                        ?>
+                        <!-- <input name="photos" type="radio" value="customer" checked>ご自身でご用意
+                        <input name="photos" type="radio" value="me">こちらでご用意 -->
+                    </dd>
+                    <dt>サーバーの有無</dt>
+                    <dd>
+                        <?php
+                        if ($server == "customer") {
+echo <<<EOT
+<input name="server" type="radio" value="customer" checked>ご自身でご用意
+<input name="server" type="radio" value="me">こちらでご用意
+<input name="server" type="radio" value="other">分からない
+EOT;
+                        } else if ($server == "me") {
+echo <<<EOT
+<input name="server" type="radio" value="customer">ご自身でご用意
+<input name="server" type="radio" value="me" checked>こちらでご用意
+<input name="server" type="radio" value="other">分からない
+EOT;
+                        } else if ($server == "other") {
+echo <<<EOT
+<input name="server" type="radio" value="customer">ご自身でご用意
+<input name="server" type="radio" value="me">こちらでご用意
+<input name="server" type="radio" value="other" checked>分からない
+EOT;
+                        }
+                        ?>
+                        <!-- <input name="server" type="radio" value="customer" checked>ご自身でご用意
+                        <input name="server" type="radio" value="me">こちらでご用意
+                        <input name="server" type="radio" value="other">分からない -->
+                    </dd>
+                    <div id="easy-estimate-yen">
+                        ¥---
+                    </div>
+                    <input name="kantan-mitsumori-gaku" type="hidden" id="kantan-mitsumori-gaku" value="¥---">
+                    <dt>お名前</dt>
+                    <dd>
+                        <strong class="red">*</strong><input class="name" name="family_name" type="text" placeholder="姓">
+                        <strong class="red">*</strong><input class="name" name="first_name" type="text" placeholder="名">
+                    </dd>
+                    <dd>
+                        <strong class="red">*</strong><input class="name" name="family_name_yomi" type="text" placeholder="姓（よみ）">
+                        <strong class="red">*</strong><input class="name" name="first_name_yomi" type="text" placeholder="名（よみ）">
+                    </dd>
+                    <dt>e-mailアドレス</dt>
+                    <dd>
+                        <strong class="red">*</strong><input class="e_mail" name="e_mail" type="text" placeholder="someone@example.com">
+                    </dd>
+                    <dt>ご要望等</dt>
+                    <dd>
+                        <strong class="red">*</strong><textarea class="comment" name="comment" rows="10" placeholder="参考にしたいサイト、個人か法人か、デザイン重視か機能重視かなど、出来るだけ具体的に記入ください。"></textarea>
+                    </dd>
+                    <strong class="red">*</strong>は必須項目
+                    <div class="div_submit">
+                        <button class="submit" type="submit">送信</button>
+                    </div>
+                </dl>
+            </制作>
+        </main>
+        <nav id="nav">
+            <ul>
+                <!-- <li><a href="./">トップ</a></li>
+                <li><a href="development.html">ホームページ制作</a></li>
+                <li><a href="easy.html">カンタン見積もり</a></li>
+                <li><a href="detail.html">送信フォーム</a></li>
+                <li><a href="activity.html">作者について</a></li>
+                <li><a href="twitter.html">ツイッター</a></li> -->
+                <?php
+                link_list();
+                ?>
+            </ul>
+        </nav>
+    </div>
+</body>
+</html>

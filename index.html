@@ -1,0 +1,49 @@
+<?php
+include("common.php");
+?>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title><?= $page_title ?></title>
+    <meta name="author" content="">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <!-- <base href="http://localhost/tasogare/"> -->
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css?2016111101">
+    <link rel="icon" type="image/png" href="./images/favicon-32.png">
+</head>
+<body>
+    <div id="container">
+        <div id="logo"><img src="./images/logo_oart.png" alt="ロゴ"></div>
+        <header id="header">
+            <h1 class="top">ものを創るということ</h1>
+            <h2 class="top">〜それは、時と空間の一瞬のきらめきをとらえるということ〜</h2>
+        </header>
+        <aside id="sidebar" class="nocontents">
+        </aside>
+        <main class="no-background">
+            <img id="sunset" alt="夕陽" src="./images/sunset00.jpg">
+            <!-- <img id="metropolitan" alt="大都会" src="./images/metropolitan01.jpg">
+            <img id="apples" alt="りんご" src="./images/apples01.jpg">
+            <img id="momiji" alt="もみじ" src="./images/momiji01.jpg"> -->
+        </main>
+        <nav id="nav">
+            <ul>
+                <!-- <li><a href="./">トップ</a></li>
+                <li><a href="development.html">ホームページ制作</a></li>
+                <li><a href="easy.html">カンタン見積もり</a></li>
+                <li><a href="activity.html">普段の生活</a></li>
+                <li><a href="twitter.html">ツイッター</a></li> -->
+                <?php
+                link_list();
+                ?>
+            </ul>
+        </nav>
+        <footer id="footer">
+            <h2 id="top_page_footer">あなたの想いをHPという形にしてみませんか？</h2>
+        </footer>
+    </div>
+</body>
+</html>

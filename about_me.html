@@ -1,0 +1,78 @@
+<?php
+include("common.php");
+?>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>HP制作</title>
+    <meta name="author" content="">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <!-- <base href="http://localhost/tasogare/"> -->
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css?2016110202">
+    <link rel="icon" type="image/png" href="./images/favicon-32.png">
+</head>
+<body>
+    <div id="container">
+        <div id="logo"><img src="./images/logo_oart.png" alt="ロゴ"></div>
+        <header id="header">
+            <h1>制作者について</h1>
+        </header>
+        <aside id="sidebar">
+            <h2>自己紹介</h2>
+        </aside>
+        <main>
+            <h2>活動ネーム</h2>
+            <p>oart（オアート）と言います。本名のアナグラムです。</p>
+            <h2>主な活動内容</h2>
+            <p>
+                <ul class="detail">
+                    <li>html+css, javascript, phpを用いたWebサイト作成</li>
+                    <li>iOS、 Androidアプリ作成 （主な作品：「単碁帳」）</li>
+                </ul>
+            </p>
+            <h2>活動拠点</h2>
+            <p>
+                千葉県市川市(最寄り駅は東京メトロ東西線 行徳)
+            </p>
+            <h2>経歴</h2>
+            <p>
+                <ul class="detail">
+                    <li>愛知県岡崎市出身</li>
+                    <li>中学時代をドイツで過ごす</li>
+                    <li>東京大学工学部金属工学科卒</li>
+                    <li>日本IBMに5年勤務後フリーとなる</li>
+                </ul>
+            </p>
+            <h2>趣味</h2>
+            <p>
+                <ul class="detail">
+                    <li>ダンス（ジャズ、ストリート）</li>
+                    <li>数学</li>
+                    <li>作曲、楽器演奏</li>
+                    <li>碁</li>
+                    <li>卓球、バレーボール</li>
+                </ul>
+                <p>
+                    <ul class="detail">
+                    </ul>
+                </p>
+            </main>
+            <nav id="nav">
+                <ul>
+                    <!-- <li><a href="./">トップ</a></li>
+                    <li><a href="development.html">ホームページ制作</a></li>
+                    <li><a href="easy.html">カンタン見積もり</a></li>
+                    <li><a href="detail.html">送信フォーム</a></li>
+                    <li><a href="activity.html">作者について</a></li>
+                    <li><a href="twitter.html">ツイッター</a></li> -->
+                    <?php
+                    link_list();
+                    ?>
+                </ul>
+            </nav>
+        </div>
+    </body>
+    </html>
